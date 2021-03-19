@@ -49,5 +49,8 @@
     * device animation between each guess
     * add a sense of urgency
 
-
+    ![lose_case](assets/lose_case_screen.jpeg)
+    ![main_screen](assets/main_screen.jpeg)
+    ![title_screen](assets/title_screen.jpeg)
+    ![win_case](assets/win_case_screen.jpeg)
     
