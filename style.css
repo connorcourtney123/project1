@@ -1,0 +1,121 @@
+body {
+    text-align: center;
+    margin: 0 auto;
+    background-color: royalblue;
+}
+
+
+/* TITLE SCREEN */
+
+form {
+    margin-top: 50px;
+}
+
+
+#title_screen{
+    display:none;
+}
+
+/* MAIN SCREEN */
+ #main_screen{
+  /*  this is a flex container for noteScreen numbOverlay bankLock */
+    display:flex;
+    margin: 5vw 5vw 5vw 5vw;
+
+}
+
+#noteScreen{
+    background-color: lightblue;
+    width: 50vw;
+    height: 50vw;
+    border: 5vw solid black;
+    border-radius: 2%;
+}
+
+#numOverlay{
+    background-color: rgba(179, 255, 102, 0.4);
+    width: 50vw;
+    height: 30vw;
+    z-index: 2;
+    margin: 25vw auto auto -1vw;
+    border: 2vw solid black;
+    border-radius: 2%;
+   
+}
+
+#bankLock{
+    /* calculator screen and bank lock pad */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: gray;
+    width: 45vw;
+    height: 55vw;
+    margin: 5vw auto auto -40vw;
+    z-index: 1;
+}
+
+#bankLockScreen{
+    background-color: blue;
+    width: 80%;
+    height: 15%;
+    border: 1vw solid black;
+
+    
+}
+
+#bankLockPad{
+    /* has number buttons */
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 50%;
+    margin-top: -5%;
+
+}
+ .numButton{
+     background-color: lightgray;
+     height: 5vw;
+     width: 5vw;
+     margin: 1vw 1.5vw 1vw 1.5vw;
+     border-right: .5vw solid black;
+     border-bottom: .5vw solid black;
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 400%;
+     font-weight: bold;
+ }
+
+ .fingerPrint{
+    
+     height: 5vw;
+     width: 5vw;
+     margin: 1vw 1.5vw 1vw 1.5vw;
+ }
+
+    .fingerPrint img{
+        height: 5vw;
+        width: 5vw;
+    }
+ #FPHolder{
+    
+    height: 100%;
+    width: 70%;
+    margin: 2% auto auto auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+ }
+
+/*Win Screen*/
+
+#win{
+    display:none;
+}
+
+/*Lose Screen*/
+
+#lose{
+    display:none;
+}
