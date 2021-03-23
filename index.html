@@ -14,7 +14,19 @@
         <button id="startButton" type="button">Start</button>
     </div>
 
+<!--modal ASSISTED with code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal -->
 
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>ThiefTech&trade; gives coded feedback about your guesses:</p>
+          <p><div class="red hintCircles"></div> = a right color in the right spot</p>
+          <p><div class="white hintCircles"></div> = a right color in the wrong spot</p>
+        </div>
+      
+      </div>
     <div id="main_screen">
         <div id="noteScreen">
 
@@ -34,10 +46,20 @@
                 <div id ='yellowPrint' class="fingerPrint"><img src="assets/printYellow.png"></div>
                 <div class="fingerPrint"></div>
             </div>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="manualBtn">ThiefTech&trade; Manual</button>
+
         </div>
         <div id="bankLock">
+           <div id="bankLogo"><img src="assets/bankLogo.png" width="80vw" height="80vw" />Pigville Bank Vault</div>
             <div id="bankLockScreen">
-
+                <div id="location1" class="star">*</div>
+                <div id="location2" class="star">*</div>
+                <div id="location3" class="star">*</div>
+                <div id="location4" class="star">*</div>
+                <p id="correct" class="message">access granted</p>
+                <p id="incorrect" class="message">incorrect key</p>
             </div>
             <div id="bankLockPad">
                 <div class="numButton">1</div>

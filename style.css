@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 body {
     text-align: center;
     margin: 0 auto;
     background-color: royalblue;
+    background-image: url('assets/bankWall2.jpeg');
+    /* https://www.wallpaperflare.com/untitled-metal-wall-texture-gray-background-metallic-smooth-wallpaper-zutix/download/1920x1080 */
 }
 
 
@@ -23,6 +27,63 @@ form {
     margin: 5vw 5vw 5vw 5vw;
 
 }
+
+#manualBtn{
+    margin: -10vw auto auto -66vw;
+    color: gray;
+    background-color: black;
+    font-size: 1.5vw;
+    font-family: sans-serif;
+    font-weight:200;
+    border-radius: 2%;
+}
+#manualBtn:hover{
+    color:green;
+}
+
+/* assisted with code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    padding-top: 20vw; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+      display: flex;
+      flex-wrap: wrap;
+      color: gray;
+      background-color: black;
+      font-size: 1.5vw;
+      font-family: sans-serif;
+      font-weight: 200;
+      margin: auto;
+      padding: 2vw;
+      border: .5vw solid #888;
+      width: 25%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    margin: auto 0 auto auto;
+    font-size: 2vw;
+    font-weight: bold;
+  }
+  .close:hover{
+      cursor: pointer;
+      color: green;
+  }
+
 .guessDisplay{
     display: flex;
     align-items: center;
@@ -65,6 +126,8 @@ form {
 }
 
 #noteScreen{
+    background-image: url('assets/screen2.jpeg');
+    /*http://wallpaperswide.com/dotted_texture-wallpapers.html*/
     background-color: lightblue;
     width: 50vw;
     height: 50vw;
@@ -87,32 +150,71 @@ form {
     /* calculator screen and bank lock pad */
     display:flex;
     flex-direction: column;
+    border-radius: 1%;
     align-items: center;
     justify-content: space-around;
-    background-color: gray;
+    background-color: #9696a1;
+    box-shadow: 10px 20px 36px #000000;
     width: 45vw;
     height: 55vw;
     margin: 5vw auto auto -40vw;
     z-index: 1;
 }
-
-#bankLockScreen{
-    background-color: blue;
+#bankLogo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: serif;
+    font-size: 2.5vw;
     width: 80%;
-    height: 15%;
+    height: 5vw;
+    align-self: center;
+    margin: 1vw 0 1vw 0;
+}
+#bankLockScreen{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #000066;
+    width: 80%;
+    height: 6vw;
     border: 1vw solid black;
-
+    margin: -.5vw auto auto auto;
     
 }
+.message{
+    display:none;
+    color: white;
+    font-size: 2vw;
+    margin: auto auto auto 1vw;
 
+}
+.star{
+    color: white;
+    font-size: 4vw;
+    margin: auto 1vw auto 1vw;
+}
+#location1{
+   display:none;
+}
+#location2{
+    display:none;
+ }
+ #location3{
+    display:none;
+ }
+ #location4{
+    display:none;
+ }
 #bankLockPad{
     /* has number buttons */
     display:flex;
     flex-wrap:wrap;
     justify-content: space-evenly;
     width: 80%;
-    height: 50%;
-    margin-top: -5%;
+    height: 60.5%;
+    margin-top: -100vw;
 
 }
  .numButton{
@@ -123,7 +225,7 @@ form {
      border-right: .5vw solid black;
      border-bottom: .5vw solid black;
      font-family: 'Times New Roman', Times, serif;
-     font-size: 400%;
+     font-size: 5vw;
      font-weight: bold;
  }
 
