@@ -9,10 +9,23 @@
 </head>
 <body>
    
-    <div id="title_screen"> 
-        <h1>MasterTHIEF</h1>
-        <button id="startButton" type="button">Start</button>
-    </div>
+    <!--LOSE SCREEN-->
+
+<div id="jailbars">
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+    <div class="jailbar"></div>
+</div>
+
+   
 
 <!--modal ASSISTED with code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal -->
 
@@ -78,12 +91,26 @@
         </div>
     </div>
 
-    <div id="win"></div>
-    <div id="lose"></div>
     
 
+<!-- sound sourced from https://www.soundjay.com/heartbeat-sound-effect.html -->
+<audio id="fastHeartBeat">
+    <source src="assets/heartbeatFast.mp3" type="audio/mp3" />
+    <source src="assets/heartbeatFast.wav" type="audio/mp3" />
+</audio>
 
 
+<!-- sound sourced from https://www.youtube.com/watch?v=JM7v15SzKJM -->
+<audio id="siren" loop>
+    <source src="assets/policeCar1.mp3" type="audio/mp3" />
+</audio>
+
+
+<!-- sound sourced from https://youtu.be/8cM24tzPpeI -->
+<audio id="vaultOpen">
+    <source src="assets/vaultOpen.mp3" type="audio/mp3" />
+</audio>
+<div id="playAgain"><button id="playAgainBttn">Play Again?</button></div>
 
 </body>
 </html>

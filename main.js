@@ -2,16 +2,39 @@ console.log('hey')
 
 
 // Main Screen
-const COLOR_LIST = ['green', 'red', 'blue', 'yellow', 'white', 'purple']
+const COLOR_LIST = ['green', 'red', 'blue', 'yellow', 'white', 'purple'] //use this to get random code
 
-let code= []
+let code= [] //answer
 let currentGuess = []
 let pastGuesses = [] // this is an array of guess objects. guess objects holds GUESS and RED and WHITE values
+// pastGuesses example:
+// pastGuesses = [
+//     {   guess: ['red', 'red', 'blue', 'yellow'],
+//         red: 0;
+//         white: 2;
+//     },
+//     {   guess: ['red', 'blue', 'red', 'yellow'],
+//         red: 1;
+//         white: 1;
+//     }
+// ]
 let guessCount = 0
 
+// pause lose game animation
+// https://css-tricks.com/controlling-css-animations-transitions-javascript/
+document.getElementById("jailbars").style.webkitAnimationPlayState = "paused";
+// pause win game animation
+document.getElementById("main_screen").style.webkitAnimationPlayState = "paused";
+// pause play again animation
+document.getElementById("playAgain").style.webkitAnimationPlayState = "paused";
+
+/*make play again button work*/
+document.getElementById("playAgainBttn").addEventListener("click", function () {
+    location.reload();
+})
 
 for(let i=0; i < 4; i++){
-    code.push(COLOR_LIST[Math.floor(Math.random() * COLOR_LIST.length)])
+    code.push(COLOR_LIST[Math.floor(Math.random() * COLOR_LIST.length)]) //randomizing index of color list
 }
 console.log(code);
 
@@ -36,9 +59,14 @@ document.querySelector('#purplePrint').addEventListener('click', function(){
 
 
 function fingerClick(color) {
+    /*first clear any msg on bank lock */
     document.querySelector('#correct').style.display = 'none';
     document.querySelector('#incorrect').style.display = 'none';
+
     currentGuess.push(color);
+
+    /*add stars to bank lock*/
+    
     if (currentGuess.length == 1){
         document.querySelector('#location1').style.display = 'block';
     }else if (currentGuess.length == 2){
@@ -59,8 +87,16 @@ function fingerClick(color) {
         guessCount++
         checkGuess(code, g)
         updateNoteScreen()
-        if(guessCount == 10 && g.red != 4){
-            alert('YOU LOSE')
+        if(guessCount == 10 && g.red != 4){ //if they lost
+            //stop heartbeat
+            document.getElementById("fastHeartBeat").pause();
+
+            //jail bar animation
+            document.getElementById("jailbars").style.webkitAnimationPlayState = "running";
+
+            //play again button slides down
+            document.getElementById("playAgain").style.webkitAnimationPlayState = "running";
+
         }
         currentGuess = []
     }
@@ -94,11 +130,44 @@ function checkGuess(code, currentGuess){
     }
     console.log("pastGuesses after newest check")
     console.log(pastGuesses)
+    // if they found the answer
     if(currentGuess.red == 4){
+
+        //stop all stressor sounds
+        document.getElementById("fastHeartBeat").pause()
+        document.getElementById("siren").pause()
+
+        //display access granted
         document.querySelector('#correct').style.display = 'block'
-        alert("YOU WIN")
-    } else{
+        
+
+         // vault open sound
+        document.getElementById('vaultOpen').play()
+        //slide keypad and thief tech away to the left
+        document.getElementById('main_screen').style.webkitAnimationPlayState = "running";
+
+        //as it slides away change bg to vault
+        document.body.style.backgroundImage = "url('assets/openVault.jpeg')";
+        
+
+        //play again button slides down
+        document.getElementById("playAgain").style.webkitAnimationPlayState = "running";
+       
+    } else{ //if they inputed an incorrect guess
+
+        //display incorrect 
         document.querySelector('#incorrect').style.display = 'block'
+
+        //if their on guess number 8
+        if(guessCount == 8){
+            //play heartbeat
+            document.getElementById("fastHeartBeat").play()
+        }else if(guessCount== 9){
+            //play siren
+            document.getElementById("siren").play()
+        }
+
+
     }
 }
 
